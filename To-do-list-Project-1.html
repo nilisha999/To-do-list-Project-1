@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nilisha To-do List Project Final</title>
+    <style>
+      .popup {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+      }
+      .popup-content {
+        background-color: greenyellow;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid;
+        width: 50%;
+        font-weight: bolder;
+      }
+      .show {
+        display: block;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>To Do List Application</h4>
+    <!--Enter Your task here-->
+    <input id="inputText" placeholder="Add your task here" required />
+    <!---Click on Submit Button-->
+    <button id="openFormButton2">Add Info Task</button>
+    <!--Create a Popup box-->
+    <div id="myPopupTask" class="popup">
+      <div class="popup-content">
+        <form id="popupFormTask">
+          <h3><b>More About Task</b></h3>
+          Task Name:
+          <input type="text" id="displayInputText" required />
+          <br />
+          Due Date and Time:
+          <input type="datetime-local" id="dueDateTime" required />
+          <button id="closePopupTask">Submit Task</button>
+        </form>
+      </div>
+    </div>
+
+    <!--To Show the task name and Due date after Successfuly submit-->
+    <div id="taskList" class="hidden">
+      <h4>Task List</h4>
+      <!-- This is where the tasks will be displayed -->
+    </div>
+    <!--To Show the Completed Task List-->
+    <div id="completedTaskList" style="display: none">
+      <h3>Completed Task List</h3>
+    </div>
+
+    <!--2ND Functionlaity Show a Popup or Inline Form to edit the task-->
+    <div id="editPopupTask" class="popup">
+      <div class="popup-content">
+        <form id="editPopupFormTask">
+          <h3><b>Edit Task</b></h3>
+          Task Name:
+          <input type="text" id="editTaskName" required />
+          <br />
+          Due date and Time:
+          <input type="datetime-local" id="editDueDateTime" required />
+          <button id="saveEditTaskButton">Save Task</button>
+        </form>
+      </div>
+    </div>
+    <script src="To-do-list-Project-1.js"></script>
+  </body>
+</html>
